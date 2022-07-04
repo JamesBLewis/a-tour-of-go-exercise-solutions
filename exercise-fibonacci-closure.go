@@ -6,16 +6,15 @@ import "fmt"
 // a function that returns an int.
 func fibonacci() func() int {
 	counter := 0
-	fib1 := 0
-	fib2 := 1
+	fib1, fib2 := 0, 1
+
 	return func() int {
 		if counter < 2 {
 			counter++
 			return counter - 1
 		}
 		result := fib1 + fib2
-		fib1 = fib2
-		fib2 = result
+		fib1, fib2 = fib2, result
 		return result
 	}
 }
