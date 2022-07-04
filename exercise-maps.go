@@ -6,12 +6,12 @@ import (
 )
 
 func WordCount(s string) map[string]int {
-	m := make(map[string]int)
-	words := strings.Split(s, " ")
-	for _, s := range words{
-		elem, _ := m[s]
-		m[s] = elem + 1
+	m := map[string]int{}
+	
+	for _, word := range strings.Fields(s) {
+		m[word]++
 	}
+	
 	return m
 }
 
